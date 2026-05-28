@@ -13,7 +13,7 @@ body {
 }
 
 
-h1 {
+.page-title {
   color: darkolivegreen;
   font-family: 'Georgia', serif;
   margin-bottom: 20px;
