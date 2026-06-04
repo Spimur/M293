@@ -1,27 +1,52 @@
-/* Grundlegende Einstellungen für die ganze Seite */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Ein ganz helles Grau als Hintergrund */
+    background-color: #f4f4f4; 
     color: #222;
     margin: 0;
     padding: 0;
 }
 
-/* Der Header mit der Linie unten aus deiner Skizze */
 header {
     border-bottom: 2px solid black;
     padding: 20px 40px;
     background-color: white;
 }
 
-/* Das Logo ein bisschen anpassen, damit es nicht riesig ist */
 .logo {
     height: 50px; 
 }
 
-/* Den Hauptbereich begrenzen und in die Mitte rücken */
 main {
     max-width: 900px;
-    margin: 40px auto; /* "auto" zentriert den gesamten Block auf dem Bildschirm */
-    padding: 0 20px;
+    margin: 40px auto;     padding: 0 20px;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 50px;
+}
+
+.album-item {
+    display: flex; 
+    align-items: center;
+    gap: 20px;
+}
+
+.album-cover img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; 
+    border: 2px solid #222;
+}
+
+.album-info h2 {
+    margin: 0 0 5px 0; 
+    font-size: 1.5rem;
+}
+
+.album-info p {
+    margin: 0;
+    color: #555;
 }
