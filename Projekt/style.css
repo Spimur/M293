@@ -1,0 +1,148 @@
+/* --- 1. STYLEGUIDE (CSS Variables) --- */
+:root {
+    /* Colors */
+    --bg-dark: #141416;      /* Deep slate dark background */
+    --bg-card: #1d1d21;      /* Slightly lighter grey for cards/sections */
+    --text-main: #b1b1b7;    /* Soft grey for body text (easy on the eyes) */
+    --text-white: #ffffff;   /* Crisp white for important headings */
+    --accent-error: #ff3b30; /* Aggressive Error Red */
+    --accent-hover: #ff6961; 
+    
+    /* Typography */
+    --font-main: 'Inter', sans-serif;
+}
+
+/* --- 2. RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    background-color: var(--bg-dark);
+    
+    /* --- THE MATTE DEEPSLATE WALL (Much softer, less plastic) --- */
+    background-image: 
+        linear-gradient(335deg, rgba(255,255,255,0.008) 23px, transparent 23px),
+        linear-gradient(155deg, rgba(255,255,255,0.008) 23px, transparent 23px),
+        linear-gradient(335deg, rgba(255,255,255,0.008) 23px, transparent 23px),
+        linear-gradient(155deg, rgba(255,255,255,0.008) 23px, transparent 23px);
+    background-size: 58px 58px;
+    background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+}
+
+/* --- 3. HEADER & NAV (Centered Layout) --- */
+header {
+    background-color: var(--bg-card);
+    padding: 30px 20px;
+    text-align: center; /* Centers all inline content */
+    border-bottom: 2px solid var(--accent-error);
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 15px; /* Space between title and nav */
+    letter-spacing: -0.5px;
+}
+
+/* Color splitting for the title */
+.red-text {
+    color: var(--accent-error);
+}
+.white-text {
+    color: var(--text-white);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centers the navigation links horizontally */
+    gap: 30px;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-error);
+}
+
+/* --- 4. MAIN LAYOUT --- */
+main {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero h2 {
+    color: var(--text-white);
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- 5. FOOTER --- */
+footer {
+    background-color: var(--bg-card);
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.newsletter {
+    margin-bottom: 30px;
+}
+
+.newsletter h3 {
+    color: var(--text-white);
+    margin-bottom: 15px;
+}
+
+.newsletter input {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 1px solid #333;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    margin-right: 10px;
+}
+
+.newsletter button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: var(--accent-error);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.newsletter button:hover {
+    background-color: var(--accent-hover);
+}
