@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Fails - Error 404</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1><span class="red-text">ERROR 404:</span> <span class="white-text">GOOD DESIGN NOT FOUND.</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="all.html" class="active">All Fails</a></li>
+                <li><a href="contact.html">Report a Fail</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="margin-bottom: 30px;">
+            <h2>The Archive of Pain.</h2>
+            <p>Browse through our entire collection of design crimes. Use the filters to find your specific nightmare.</p>
+        </section>
+
+        <section class="filter-section">
+            <div class="filter-bar">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Digital / UI</button>
+                <button class="filter-btn">Lost in Translation</button>
+                <button class="filter-btn">Real-Life Fails</button>
+                <button class="filter-btn">Culture Clash</button>
+            </div>
+        </section>
+
+        <section class="archive-grid">
+            <div class="fail-grid">
+                
+                <article class="fail-card">
+                    <div class="card-image"><div class="placeholder-img">Image: Flag</div></div>
+                    <div class="card-content">
+                        <span class="category">Lost in Translation</span>
+                        <h3>The Thai Flag Fail</h3>
+                        <p>How hard can it be to print three colors in the right order? Apparently, very hard.</p>
+                        <div class="author-info">
+                            <div class="author-avatar"></div><span>By [Dein Name]</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="fail-card">
+                    <div class="card-image"><div class="placeholder-img">Image: Menu</div></div>
+                    <div class="card-content">
+                        <span class="category">Digital / UI</span>
+                        <h3>The Un-zoomable Menu</h3>
+                        <p>A restaurant menu that forces you to order a magnifying glass before your meal.</p>
+                        <div class="author-info">
+                            <div class="author-avatar"></div><span>By [Dein Name]</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="fail-card">
+                    <div class="card-image"><div class="placeholder-img">Image: Door</div></div>
+                    <div class="card-content">
+                        <span class="category">Real-Life Fails</span>
+                        <h3>The Norman Door</h3>
+                        <p>A door that says "Pull" but has a handle clearly designed for pushing. Pure evil.</p>
+                        <div class="author-info">
+                            <div class="author-avatar"></div><span>By [Dein Name]</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="fail-card">
+                    <div class="card-image"><div class="placeholder-img">Image: Error</div></div>
+                    <div class="card-content">
+                        <span class="category">Digital / UI</span>
+                        <h3>Error: Success</h3>
+                        <p>An error message that pops up to tell you that the operation failed successfully.</p>
+                        <div class="author-info">
+                            <div class="author-avatar"></div><span>By [Dein Name]</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="fail-card">
+    <a href="detail.html" class="card-link">
+        
+        <div class="card-image">
+            <div class="placeholder-img">Image: Angry Avocado</div>
+        </div>
+        <div class="card-content">
+            <span class="category">Culture Clash</span>
+            <h3>The Furious Avocado</h3>
+            <p>When the German word for hatred ("Hass") meets a perfectly innocent Norwegian grocery receipt. This fruit is mad.</p>
+            <div class="author-info">
+                <div class="author-avatar"></div><span>By [Dein Name]</span>
+            </div>
+        </div>
+
+    </a> </article>
+
+                <article class="fail-card">
+                    <div class="card-image"><div class="placeholder-img">Image: Sammen Holder</div></div>
+                    <div class="card-content">
+                        <span class="category">Culture Clash</span>
+                        <h3>The Supportive Trash Can</h3>
+                        <p>Spotted in Norway. It just wants to tell you that "together we hold on", but for English speakers, it sounds like an offensive demand.</p>
+                        <div class="author-info">
+                            <div class="author-avatar"></div><span>By [Dein Name]</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="newsletter">
+            <h3>Subscribe to your daily dose of design pain</h3>
+            <form action="#">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="brutal-button">Subscribe</button>
+            </form>
+        </div>
+        <div class="footer-legal">
+            <p>&copy; 2026 Error 404. All rights reserved.</p>
+            <div style="font-size: 0.85rem; color: var(--text-main); margin-top: 15px; line-height: 1.5;">
+                <p><strong>Legal Notice / Impressum:</strong></p>
+                <p>Created by: [Dein Name]</p>
+                <p>This website is a non-commercial student project created for educational purposes at [Name deiner Berufsschule].</p>
+                <p>Contact: [Deine E-Mail]</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Alle Buttons und alle Karten auswählen
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.fail-card');
+
+            // Jedem Button einen Klick-Event geben
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    
+                    // 1. Visuelles Update: Den "active" Status verschieben
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // 2. Den Text des geklickten Buttons auslesen
+                    const filterValue = btn.textContent.trim();
+
+                    // 3. Karten filtern
+                    cards.forEach(card => {
+                        // Die Kategorie der aktuellen Karte auslesen
+                        const category = card.querySelector('.category').textContent.trim();
+                        
+                        // Wenn "All" geklickt wurde ODER die Kategorie passt -> Karte anzeigen
+                        if (filterValue === 'All' || category === filterValue) {
+                            card.style.display = 'flex'; // "flex" weil unsere Karten Flexbox nutzen
+                        } else {
+                            // Ansonsten -> Karte verstecken
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>

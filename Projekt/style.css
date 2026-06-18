@@ -178,8 +178,8 @@ footer {
 
 .fail-grid {
     display: grid;
-    /* CSS Magie: Macht das Grid automatisch responsive! */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* FIX: auto-fill statt auto-fit sorgt für einheitliche Kartenbreiten! */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
     margin-bottom: 50px;
 }
@@ -266,4 +266,301 @@ footer {
 .author-info span {
     font-size: 0.85rem;
     color: var(--text-white);
+}
+
+
+/* --- 7. ZENTRIERUNG FÜR DIE KONTAKTSEITE --- */
+.centered-wrapper {
+    max-width: 700px; /* Macht den Bereich schmaler, sieht besser aus */
+    margin: 0 auto 50px auto; /* Zentriert den ganzen Block in der Mitte */
+    text-align: center; /* Zentriert die Titel ("The Design Police" etc.) */
+}
+
+/* --- 8. DAS EISERNE FORMULAR (.heavy-form) --- */
+.heavy-form {
+    background-color: var(--bg-card);
+    border: 2px solid #333;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: left; /* Die Labels im Formular sollen trotzdem links stehen */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    color: var(--text-white);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Die Eingabefelder stylen */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background-color: var(--bg-dark); /* Dunkler Hintergrund */
+    color: var(--text-white); /* Heller Text */
+    border: 2px solid #333; /* Dunkler Rand */
+    padding: 15px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+/* Der geforderte Dropdown-Pfeil bekommt auch das dunkle Theme */
+.form-group select {
+    cursor: pointer;
+    appearance: none; /* Entfernt den Standard-Pfeil des Browsers */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%238a8a93%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+}
+
+/* Hover & Focus Effekte (Wenn man reinklickt) */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-error); /* Rand wird blutrot */
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+}
+
+/* Platzhalter-Text abdunkeln */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #555;
+}
+
+/* --- 9. DER MASSIVE ABSENDE-BUTTON --- */
+.brutal-button {
+    background-color: var(--bg-card);
+    color: var(--text-white);
+    border: 2px solid var(--accent-error);
+    box-shadow: 4px 4px 0px #000000;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: translate(-2px, -2px);
+    transition: all 0.2s ease;
+    margin-top: 10px;
+    font-family: var(--font-main);
+}
+
+.brutal-button:hover {
+    background-color: var(--accent-error);
+    color: #ffffff;
+    box-shadow: 0px 0px 0px #000000;
+    transform: translate(2px, 2px);
+}
+
+
+/* --- 10. DATEI-UPLOAD STYLING --- */
+input[type="file"] {
+    padding: 10px;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    border: 2px dashed #333; /* Ein gestrichelter Rand für Uploads sieht immer gut aus */
+    cursor: pointer;
+}
+
+input[type="file"]:hover,
+input[type="file"]:focus {
+    border-color: var(--accent-error);
+}
+
+/* Den hässlichen Standard-Button des Browsers überschreiben */
+input[type="file"]::file-selector-button {
+    background-color: var(--bg-card);
+    color: var(--text-white);
+    border: 1px solid #333;
+    padding: 8px 15px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    border-color: var(--accent-error);
+    color: var(--accent-error);
+}
+
+
+
+/* --- 11. FILTER BAR (all.html) --- */
+.filter-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Bricht auf Handys automatisch in die nächste Zeile um */
+    gap: 15px;
+}
+
+.filter-btn {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    border: 2px solid #333;
+    padding: 10px 20px;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+    transition: all 0.2s ease;
+}
+
+/* Hover-Effekt */
+.filter-btn:hover {
+    border-color: var(--text-white);
+    color: var(--text-white);
+}
+
+/* Der aktive Button (zeigt, welcher Filter gerade ausgewählt ist) */
+.filter-btn.active {
+    background-color: var(--bg-card);
+    border-color: var(--accent-error);
+    color: var(--text-white);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.8);
+    transform: translate(3px, 3px); /* Drückt den aktiven Button permanent ein */
+}
+
+
+
+/* --- 12. ARTIKEL DETAILSEITE (detail.html) --- */
+.article-container {
+    max-width: 800px; /* Schmaler für bessere Lesbarkeit */
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Der Zurück-Button im eisernen Look */
+.back-link-wrapper {
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--font-main);
+    background-color: var(--bg-card);
+    border: 2px solid #333;
+    padding: 8px 16px;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    border-color: var(--text-white);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.8);
+}
+
+/* Die eiserne Akte (Artikel) */
+.case-file {
+    background-color: var(--bg-card);
+    border: 2px solid #333;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8);
+    padding: 40px;
+}
+
+.post-header {
+    border-bottom: 2px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.post-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 2.5rem;
+    color: var(--text-white);
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+/* Bilder im Artikel */
+.post-media {
+    margin-bottom: 30px;
+    border: 2px solid #333;
+}
+
+.post-media figcaption {
+    background-color: var(--bg-dark);
+    padding: 10px;
+    font-size: 0.85rem;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    color: var(--accent-error);
+}
+
+/* Artikel-Text */
+.post-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--text-white);
+}
+
+.post-content h3 {
+    font-family: 'Space Mono', monospace;
+    color: var(--accent-error);
+    margin: 40px 0 15px 0;
+    font-size: 1.5rem;
+}
+
+/* Responsives Video (Zwingend für Handys!) */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border: 2px solid #333;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --- FIX: Anklickbare Karten --- */
+.card-link {
+    text-decoration: none; /* Entfernt den hässlichen Unterstrich */
+    color: inherit; /* Verhindert, dass der Text blau wird */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Sorgt dafür, dass das Layout in der Karte perfekt bleibt */
 }
